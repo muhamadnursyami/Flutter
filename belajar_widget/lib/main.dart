@@ -1,5 +1,6 @@
 import 'package:belajar_widget/widgets/sample_container.dart';
 import 'package:belajar_widget/widgets/sample_image.dart';
+import 'package:belajar_widget/widgets/sample_listview.dart';
 import 'package:belajar_widget/widgets/sample_text.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
           // This works for code too, not just values: Most code changes can be
           // tested with just a hot reload.
           primarySwatch: Colors.purple),
-      home: const SampleImage(),
+      home: const SampleListview(),
     );
   }
 }
