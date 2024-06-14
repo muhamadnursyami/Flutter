@@ -7,19 +7,27 @@ class SampleListview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Belajar Widget List View'),
-      ),
-      body: ListView.builder(
-        padding: const EdgeInsets.all(20),
-        itemBuilder: (context, index) {
-          return Container(
-            color: Colors.purple[colorCodes[index]],
-            height: 100,
-          );
-        },
-        itemCount: colorCodes.length,
-      ),
-    );
+        appBar: AppBar(
+          title: const Text('Belajar Widget List View'),
+        ),
+        body: Container(
+          height: 130,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.all(10),
+            itemBuilder: (context, index) {
+              return CircleAvatar(
+                radius: 60,
+                backgroundColor: Colors.red,
+                child: CircleAvatar(
+                  radius: 50,
+                  backgroundImage:
+                      NetworkImage("https://i.pravatar.cc/150?img=$index"),
+                ),
+              );
+            },
+            itemCount: colorCodes.length,
+          ),
+        ));
   }
 }
