@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SampleListview extends StatelessWidget {
-  const SampleListview({super.key});
+  SampleListview({super.key});
+  final List colorCodes = [900, 800, 700, 600, 500, 400, 300, 200, 100];
 
   @override
   Widget build(BuildContext context) {
@@ -9,59 +10,15 @@ class SampleListview extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Belajar Widget List View'),
       ),
-      body: ListView(
-        reverse: true, // membalikan urutan children
+      body: ListView.builder(
         padding: const EdgeInsets.all(20),
-        children: [
-          Container(
-            color: Colors.purple[700],
+        itemBuilder: (context, index) {
+          return Container(
+            color: Colors.purple[colorCodes[index]],
             height: 100,
-          ),
-          Container(
-            color: Colors.purple[300],
-            height: 100,
-          ),
-          Container(
-            color: Colors.purple[100],
-            height: 100,
-          ),
-          Container(
-            color: Colors.purple[700],
-            height: 100,
-          ),
-          Container(
-            color: Colors.purple[300],
-            height: 100,
-          ),
-          Container(
-            color: Colors.purple[100],
-            height: 100,
-          ),
-          Container(
-            color: Colors.purple[700],
-            height: 100,
-          ),
-          Container(
-            color: Colors.purple[300],
-            height: 100,
-          ),
-          Container(
-            color: Colors.purple[100],
-            height: 100,
-          ),
-          Container(
-            color: Colors.purple[700],
-            height: 100,
-          ),
-          Container(
-            color: Colors.purple[300],
-            height: 100,
-          ),
-          Container(
-            color: Colors.purple[100],
-            height: 100,
-          ),
-        ],
+          );
+        },
+        itemCount: colorCodes.length,
       ),
     );
   }
