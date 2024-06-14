@@ -1,3 +1,4 @@
+import 'package:belajar_widget/widgets/sample_column_row.dart';
 import 'package:flutter/material.dart';
 
 class SampleBottomNavbar extends StatefulWidget {
@@ -17,6 +18,7 @@ class _SampleBottomNavbarState extends State<SampleBottomNavbar> {
   }
 
   List<Widget> pages = [
+    const SampleColumnRow(),
     const Text(
       'Beranda',
       style: TextStyle(fontSize: 30),
@@ -38,7 +40,7 @@ class _SampleBottomNavbarState extends State<SampleBottomNavbar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Latihan Bottom Navbar'),
+        title: const Text('Latihan Colum Row'),
       ),
       body: Center(
         child: pages[_selectedIndex],
